@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.4](https://github.com/kswedberg/nuxt-breaky/compare/v1.2.3...v1.2.4) (2021-08-08)
+
+
+### Bug Fixes
+
+* improve landmark role and aria-labels ([6efafd0](https://github.com/kswedberg/nuxt-breaky/commit/6efafd077b2bbc348eef81dfee60cd0869e32282))
+
 ### [1.2.3](https://github.com/kswedberg/nuxt-breaky/compare/v1.2.2...v1.2.3) (2021-08-08)
 
 
