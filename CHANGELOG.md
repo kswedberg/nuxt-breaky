@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.3](https://github.com/kswedberg/nuxt-breaky/compare/v1.2.2...v1.2.3) (2021-08-08)
+
+
+### Bug Fixes
+
+* move vue-breaky-core into module to avoid node-sass problems from it as dep ([24b2d71](https://github.com/kswedberg/nuxt-breaky/commit/24b2d71a28ded4a293df2618806ad07e1c789b38))
+
 ### [1.2.2](https://github.com/teamnovu/nuxt-breaky/compare/v1.2.1...v1.2.2) (2020-10-03)
 
 ### [1.2.1](https://github.com/teamnovu/nuxt-breaky/compare/v1.2.0...v1.2.1) (2020-03-25)
