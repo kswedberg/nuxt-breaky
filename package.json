@@ -1,8 +1,8 @@
 {
-  "name": "@teamnovu/nuxt-breaky",
+  "name": "nuxt-tailwind-breakpoints",
   "version": "1.2.2",
   "description": "Show Tailwind CSS Breakpoints in Nuxtjs",
-  "repository": "teamnovu/nuxt-breaky",
+  "repository": "kswedberg/nuxt-breaky",
   "license": "MIT",
   "contributors": [
     {
@@ -10,6 +10,9 @@
     },
     {
       "name": "Tom Diggelmann (@buffalom)"
+    },
+    {
+      "name": "Karl Swedberg (@kswedberg)"
     }
   ],
   "files": [

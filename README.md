@@ -1,4 +1,4 @@
-# nuxt-breaky
+# nuxt-tailwind-breakpoints
 
 [![npm version][npm-version-src]][npm-version-href]
 [![License][license-src]][license-href]
@@ -12,6 +12,8 @@
 [📖 **Release Notes**](./CHANGELOG.md)
 
 ## Intro
+
+**Note**: This is a simple fork of the [nuxt-breaky](https://github.com/teamnovu/nuxt-breaky) module. It should look and act pretty much the same as the original. Minor changes include removing the `node-sass` dependency to make the module usable with node.js >= 16 and adding a landmark `aria-role` attribute to the div.current-breakpoint element.
 
 [DEMO](https://teamnovu.github.io/nuxt-breaky/)
 
@@ -29,15 +31,15 @@ Make sure `tailwindcss-module: ^1.4.0` (or higher) is installed.
 
 ## Setup
 
-1. Add `@teamnovu/nuxt-breaky` as a dev-dependency to your project
+1. Add `nuxt-tailwind-breakpoints` as a dev-dependency to your project
 
 ```bash
-yarn add @teamnovu/nuxt-breaky --dev
+yarn add nuxt-tailwind-breakpoints --dev
 
-# or npm install @teamnovu/nuxt-breaky --save-dev
+# or npm install nuxt-tailwind-breakpoints --save-dev
 ```
 
-2. Add `@teamnovu/nuxt-breaky` to the `buildModules` section of `nuxt.config.js`
+2. Add `nuxt-tailwind-breakpoints` to the `buildModules` section of `nuxt.config.js`
 
 NOTE: Use the `modules` section if you are using Nuxt older than `v2.9`. [More Info](https://nuxtjs.org/guide/modules/#build-only-modules)
 
@@ -45,11 +47,11 @@ NOTE: Use the `modules` section if you are using Nuxt older than `v2.9`. [More I
 {
   buildModules: [
     // Simple usage
-    '@teamnovu/nuxt-breaky',
+    'nuxt-tailwind-breakpoints',
 
     // With options
     [
-      '@teamnovu/nuxt-breaky',
+      'nuxt-tailwind-breakpoints',
       {
         enabled: true,
         enableInProd: false,
@@ -85,7 +87,7 @@ You can pass options to the breaky using both the module options and the Nuxt co
 ```js
 {
   buildModules: {
-    ['@teamnovu/nuxt-breaky', { /* module options */ }]
+    ['nuxt-tailwind-breakpoints', { /* module options */ }]
   },
 
   breaky: {
@@ -123,7 +125,7 @@ Copyright (c) teamnovu
 <!-- Badges -->
 
 [npm-version-src]: https://img.shields.io/npm/v/nuxt-breaky/latest.svg?style=flat-square
-[npm-version-href]: https://www.npmjs.com/package/@teamnovu/nuxt-breaky
+[npm-version-href]: https://www.npmjs.com/package/nuxt-tailwind-breakpoints
 [npm-downloads-src]: https://img.shields.io/npm/dt/nuxt-breaky.svg?style=flat-square
 [npm-downloads-href]: https://github.com/teamnovu/nuxt-breaky/releases
 [circle-ci-src]: https://img.shields.io/circleci/project/github/teamnovu/nuxt-breaky.svg?style=flat-square
