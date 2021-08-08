@@ -1,5 +1,10 @@
 <template>
-  <div class="breaky" :class="`color-scheme-${colorScheme}`">
+  <div
+    role="complementary"
+    aria-label="Tailwind Breakpoints"
+    class="breaky"
+    :class="`color-scheme-${colorScheme}`"
+  >
     <div
       v-show="!TOGGLE_ME_TO_HIDE_BREAKY"
       ref="breaky"
@@ -37,8 +42,7 @@
       </TransitionExpand>
 
       <div
-        role="complementary"
-        aria-label="Breakpoint"
+        aria-label="Current breakpoint"
         class="current-breakpoint transition duration-300 text-center border-2 border-transparent py-2 px-4 rounded-full flex items-center justify-around"
         :class="{ 'border-opacity': !expanded }"
       >
