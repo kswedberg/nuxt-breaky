@@ -37,8 +37,10 @@
       </TransitionExpand>
 
       <div
+        role="complementary"
+        aria-label="Breakpoint"
         class="current-breakpoint transition duration-300 text-center border-2 border-transparent py-2 px-4 rounded-full flex items-center justify-around"
-        :class="{ 'border-opacity-30': !expanded }"
+        :class="{ 'border-opacity': !expanded }"
       >
         <CurrentScreenIcon :screen-width="screenWidth" />
         {{ currentBreakpoint }} - {{ screenWidth }}px
@@ -333,27 +335,87 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
-@import '../assets/scss/mixins/color-scheme.scss';
+<style scoped lang="postcss">
+@import '../assets/css/custom-props.css';
 
 .color-scheme-auto {
   /* Light mode */
   @media (prefers-color-scheme: light) {
-    @include light-card;
+    .card {
+      background-color: var(--color-scheme-light-bg);
+      color: var(--color-scheme-light-text);
+    }
+
+    .border-opacity {
+      border-color: var(--color-scheme-light-border);
+    }
+
+    .bg-selected {
+      background-color: var(--color-scheme-light-bg-selected);
+    }
+
+    svg {
+      color: var(--color-scheme-light-svg-color);
+    }
   }
 
   /* Dark mode */
   @media (prefers-color-scheme: dark) {
-    @include dark-card;
+    .card {
+      background-color: var(--color-scheme-dark-bg);
+      color: var(--color-scheme-dark-text);
+    }
+
+    .border-opacity {
+      border-color: var(--color-scheme-dark-border);
+    }
+
+    .bg-selected {
+      background-color: var(--color-scheme-dark-bg-selected);
+    }
+
+    svg {
+      color: var(--color-scheme-dark-svg-color);
+    }
   }
 }
 
 .color-scheme-light {
-  @include light-card;
+  .card {
+    background-color: var(--color-scheme-light-bg);
+    color: var(--color-scheme-light-text);
+  }
+
+  .border-opacity-30 {
+    border-color: var(--color-scheme-light-border);
+  }
+
+  .bg-selected {
+    background-color: var(--color-scheme-light-bg-selected);
+  }
+
+  svg {
+    color: var(--color-scheme-light-svg-color);
+  }
 }
 
 .color-scheme-dark {
-  @include dark-card;
+  .card {
+    background-color: var(--color-scheme-dark-bg);
+    color: var(--color-scheme-dark-text);
+  }
+
+  .border-opacity-30 {
+    border-color: var(--color-scheme-dark-border);
+  }
+
+  .bg-selected {
+    background-color: var(--color-scheme-dark-bg-selected);
+  }
+
+  svg {
+    color: var(--color-scheme-dark-svg-color);
+  }
 }
 
 .breaky {
@@ -364,7 +426,7 @@ export default {
 
 @media print {
   .breaky {
-    @apply hidden;
+    display: none;
   }
 }
 
