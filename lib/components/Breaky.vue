@@ -345,79 +345,79 @@ export default {
 .color-scheme-auto {
   /* Light mode */
   @media (prefers-color-scheme: light) {
-    .card {
+    & .card {
       background-color: var(--color-scheme-light-bg);
       color: var(--color-scheme-light-text);
     }
 
-    .border-opacity {
+    & .border-opacity {
       border-color: var(--color-scheme-light-border);
     }
 
-    .bg-selected {
+    & .bg-selected {
       background-color: var(--color-scheme-light-bg-selected);
     }
 
-    svg {
+    & svg {
       color: var(--color-scheme-light-svg-color);
     }
   }
 
   /* Dark mode */
   @media (prefers-color-scheme: dark) {
-    .card {
+    & .card {
       background-color: var(--color-scheme-dark-bg);
       color: var(--color-scheme-dark-text);
     }
 
-    .border-opacity {
+    & .border-opacity {
       border-color: var(--color-scheme-dark-border);
     }
 
-    .bg-selected {
+    & .bg-selected {
       background-color: var(--color-scheme-dark-bg-selected);
     }
 
-    svg {
+    & svg {
       color: var(--color-scheme-dark-svg-color);
     }
   }
 }
 
 .color-scheme-light {
-  .card {
+  & .card {
     background-color: var(--color-scheme-light-bg);
     color: var(--color-scheme-light-text);
   }
 
-  .border-opacity-30 {
+  & .border-opacity-30 {
     border-color: var(--color-scheme-light-border);
   }
 
-  .bg-selected {
+  & .bg-selected {
     background-color: var(--color-scheme-light-bg-selected);
   }
 
-  svg {
+  & svg {
     color: var(--color-scheme-light-svg-color);
   }
 }
 
 .color-scheme-dark {
-  .card {
+  & .card {
     background-color: var(--color-scheme-dark-bg);
     color: var(--color-scheme-dark-text);
   }
 
-  .border-opacity-30 {
+  & .border-opacity-30 {
     border-color: var(--color-scheme-dark-border);
   }
 
-  .bg-selected {
+  & .bg-selected {
     background-color: var(--color-scheme-dark-bg-selected);
   }
 
-  svg {
+  & svg {
     color: var(--color-scheme-dark-svg-color);
   }
 }
