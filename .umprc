@@ -1,4 +1,4 @@
 {
-  "message": "chore(release): %s",
+  "message": "chore(release): v%s",
   "publish": true
 }
