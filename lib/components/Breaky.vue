@@ -42,7 +42,6 @@
       </TransitionExpand>
 
       <div
-        aria-label="Current breakpoint"
         class="current-breakpoint transition duration-300 text-center border-2 border-transparent py-2 px-4 rounded-full flex items-center justify-around"
         :class="{ 'border-opacity': !expanded }"
       >

@@ -3,11 +3,11 @@
     <!-- Desktop -->
     <svg
       v-show="screenWidth > 1024"
-      aria-hidden="true"
       focusable="false"
       data-icon="desktop"
       class="h-4 mr-3 fill-current"
       role="img"
+      aria-label="Desktop"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 576 512"
     >
@@ -19,11 +19,11 @@
     <!-- Tablet -->
     <svg
       v-show="screenWidth <= 1024 && screenWidth > 768"
-      aria-hidden="true"
       focusable="false"
       data-icon="tablet-alt"
       class="h-4 mr-3 fill-current"
       role="img"
+      aria-label="Tablet"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 448 512"
     >
@@ -35,11 +35,11 @@
     <!-- Mobile -->
     <svg
       v-show="screenWidth <= 768"
-      aria-hidden="true"
       focusable="false"
       data-icon="mobile-alt"
       class="h-4 mr-3 fill-current"
       role="img"
+      aria-label="Mobile"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 320 512"
     >

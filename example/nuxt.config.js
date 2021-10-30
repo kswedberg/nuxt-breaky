@@ -18,7 +18,11 @@ module.exports = {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
     ],
+    htmlAttrs: {
+      lang: 'en',
+    },
   },
+
   rootDir: resolve(__dirname),
   buildDir: resolve(__dirname, './.nuxt'),
   srcDir: __dirname,
