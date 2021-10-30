@@ -20,7 +20,7 @@
   ],
   "main": "lib/module.js",
   "scripts": {
-    "dev": "nuxt example",
+    "dev": "PORT=3311 nuxt example",
     "lint": "eslint --ext .js,.vue example lib test",
     "release": "yarn test && yarn update:gh-pages && standard-version && git push --follow-tags && npm publish",
     "release:patch": "yarn test && yarn update:gh-pages && standard-version --release-as patch && git push --follow-tags && npm publish",
