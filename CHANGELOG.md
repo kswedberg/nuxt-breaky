@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.6](https://github.com/kswedberg/nuxt-breaky/compare/v1.2.4...v1.2.6) (2021-10-30)
+
+
+### Bug Fixes
+
+* add/remove aria-label attrs to appease a11y checkers ([b48cf4e](https://github.com/kswedberg/nuxt-breaky/commit/b48cf4ea26131c7a5039d2bb5be7269f3584709e))
+* prefix nested selectors in postcss with "& " ([9bf8695](https://github.com/kswedberg/nuxt-breaky/commit/9bf86956c32d9dff87a75d1d9b9998e44f0bce62))
+
 ### [1.2.4](https://github.com/kswedberg/nuxt-breaky/compare/v1.2.3...v1.2.4) (2021-08-08)
 
 
