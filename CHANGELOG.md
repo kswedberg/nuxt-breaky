@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.8](https://github.com/kswedberg/nuxt-breaky/compare/v1.2.6...v1.2.8) (2021-11-19)
+
+
+### Bug Fixes
+
+* remove tailwind classes (ironically) to avoid purging when same classes not used in project ([c1a9e10](https://github.com/kswedberg/nuxt-breaky/commit/c1a9e10386f5762161a7252623d669340c8f2a41))
+
 ## [1.2.7](https://github.com/kswedberg/nuxt-breaky/compare/v1.2.6...v1.2.7) (2021-10-30)
 
 ## [1.2.6](https://github.com/kswedberg/nuxt-breaky/compare/1.2.5...v1.2.6) (2021-10-30)
