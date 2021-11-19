@@ -5,7 +5,7 @@
       v-show="screenWidth > 1024"
       focusable="false"
       data-icon="desktop"
-      class="h-4 mr-3 fill-current"
+      class="current-screen-icon"
       role="img"
       aria-label="Desktop"
       xmlns="http://www.w3.org/2000/svg"
@@ -21,7 +21,7 @@
       v-show="screenWidth <= 1024 && screenWidth > 768"
       focusable="false"
       data-icon="tablet-alt"
-      class="h-4 mr-3 fill-current"
+      class="current-screen-icon"
       role="img"
       aria-label="Tablet"
       xmlns="http://www.w3.org/2000/svg"
@@ -37,7 +37,7 @@
       v-show="screenWidth <= 768"
       focusable="false"
       data-icon="mobile-alt"
-      class="h-4 mr-3 fill-current"
+      class="current-screen-icon"
       role="img"
       aria-label="Mobile"
       xmlns="http://www.w3.org/2000/svg"
@@ -62,4 +62,10 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="postcss" scoped>
+.current-screen-icon {
+  fill: curentColor;
+  height: 1rem;
+  margin-right: 0.75rem;
+}
+</style>

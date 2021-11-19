@@ -8,43 +8,40 @@
     <div
       v-show="!TOGGLE_ME_TO_HIDE_BREAKY"
       ref="breaky"
-      class="card text-xs fixed flex p-2 z-50 shadow cursor-pointer antialiased font-bold leading-normal tracking-wide"
+      class="card"
       :class="[
         draggableTransitionClasses,
         {
-          'flex-col-reverse': currentPosition.includes('top'),
-          'flex-col': currentPosition.includes('bottom'),
+          'column-reverse': currentPosition.includes('top'),
+          column: currentPosition.includes('bottom'),
         },
       ]"
       @click.stop="!noExpand ? (expanded = !expanded) : null"
     >
       <TransitionExpand>
-        <div v-show="expanded" class="pt-1 pb-2 relative">
+        <div v-show="expanded" class="panel-wrapper">
           <!-- Selected Panel -->
           <span
             v-show="foundBreakpoint !== 0"
-            class="absolute h-selected w-full bg-selected rounded-lg ease-out transition-transform duration-200"
+            class="selected-panel h-selected bg-selected"
             :style="{ transform: `translateY(calc(100% * ${selected}))` }"
           />
           <!-- END Selected Panel -->
-          <ul class="relative">
+          <ul class="panel-list">
             <li
               v-for="(bp, name, index) in mappedBreakpoints"
               :key="index"
-              class="flex justify-between py-2 px-4"
-              :class="{ 'opacity-50': selected !== index }"
+              class="panel"
+              :class="{ translucent: selected !== index }"
             >
               <span>{{ name }} </span>
-              <span class="ml-5">{{ bp }}px</span>
+              <span class="bp">{{ bp }}px</span>
             </li>
           </ul>
         </div>
       </TransitionExpand>
 
-      <div
-        class="current-breakpoint transition duration-300 text-center border-2 border-transparent py-2 px-4 rounded-full flex items-center justify-around"
-        :class="{ 'border-opacity': !expanded }"
-      >
+      <div class="current-breakpoint" :class="{ 'border-opacity': !expanded }">
         <CurrentScreenIcon :screen-width="screenWidth" />
         {{ currentBreakpoint }} - {{ screenWidth }}px
       </div>
@@ -87,7 +84,7 @@ export default {
       screenWidth: window.innerWidth,
       screenHeight: window.innerHeight,
       currentPosition: this.startingPosition,
-      draggableTransitionClasses: ['transition-all', 'duration-300'],
+      draggableTransitionClasses: ['draggable-transition'],
     }
   },
 
@@ -433,14 +430,94 @@ export default {
   }
 }
 
+.shadow {
+  --tw-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
 .card {
+  font-size: 0.75rem;
+  line-height: 1.5;
+  position: fixed;
+  display: flex;
+  padding: 0.5rem;
+  z-index: 50;
+  cursor: pointer;
+  font-weight: bold;
   min-width: 170px;
   border-radius: 1.75rem;
   animation: fadeIn 0.25s forwards;
-
+  letter-spacing: 0.025em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   touch-action: none;
   user-select: none;
 }
+
+.column {
+  flex-direction: column;
+}
+
+.column-reverse {
+  flex-direction: column-reverse;
+}
+
+.translucent {
+  opacity: 0.5;
+}
+
+.panel-wrapper {
+  /* pt-1 pb-2 relative */
+  position: relative;
+  padding-top: 0.25rem;
+  padding-bottom: 0.5rem;
+}
+
+.selected-panel {
+  width: 100%;
+  position: absolute;
+  border-radius: 0.5rem;
+  transition-property: transform;
+  transition-duration: 200ms;
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+}
+.panel-list {
+  display: relative;
+}
+
+.panel {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+}
+
+.current-breakpoint {
+  display: flex;
+  width: 100%;
+  transition-property: background-color, border-color, color, fill, stroke,
+    opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+  text-align: center;
+  align-items: center;
+  justify-content: space-around;
+  border: 2px solid transparent;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+}
+
+.bp {
+  margin-left: 1.25rem;
+}
+
+.draggable-transition {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+/* */
 
 @keyframes fadeIn {
   from {
