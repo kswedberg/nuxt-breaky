@@ -64,7 +64,7 @@ export default {
 
 <style lang="postcss" scoped>
 .current-screen-icon {
-  fill: curentColor;
+  fill: currentColor;
   height: 1rem;
   margin-right: 0.75rem;
 }
