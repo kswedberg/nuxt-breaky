@@ -55,6 +55,17 @@ import interact from 'interactjs'
 import TransitionExpand from './TransitionExpand'
 import CurrentScreenIcon from './CurrentScreenIcon'
 
+const getMinWidth = (breakpoint) => {
+  if (!breakpoint || typeof breakpoint.raw !== 'string') {
+    return null
+  }
+  const minWidthQuery = breakpoint.raw.split(/\s*,\s*/).find((q) => {
+    const i = q.indexOf('min-width')
+    return i === 0 || (i > 0 && q.includes('screen'))
+  })
+  return minWidthQuery && minWidthQuery.match(/min-width:\s*(\d+)px/)
+}
+
 export default {
   components: {
     TransitionExpand,
@@ -73,6 +84,10 @@ export default {
     colorScheme: {
       type: String,
       default: 'auto',
+    },
+    parseRaw: {
+      type: Boolean,
+      default: false,
     },
   },
 
@@ -94,18 +109,19 @@ export default {
      * example: 1024px => 1024
      */
     mappedBreakpoints() {
-      const mappedScreens = {}
+      return Object.entries(this.breakpoints).reduce((obj, [key, val]) => {
+        let match
 
-      Object.keys(this.breakpoints).forEach((key) => {
-        if (typeof this.breakpoints[key] === 'string') {
-          const match = this.breakpoints[key].match(/(\d+)px/)
-          if (match) {
-            mappedScreens[key] = parseInt(match[1])
-          }
+        if (typeof val === 'string') {
+          match = val.match(/(\d+)px/)
+        } else if (this.parseRaw) {
+          match = getMinWidth(val)
         }
-      })
-
-      return mappedScreens
+        if (match) {
+          obj[key] = parseInt(match[1])
+        }
+        return obj
+      }, {})
     },
 
     /**

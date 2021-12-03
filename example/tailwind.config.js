@@ -10,7 +10,9 @@ module.exports = {
       xs: '320px',
       sm: '640px',
       md: '768px',
-      lg: '1024px',
+      lg: {
+        raw: 'print, (min-width: 1024px)',
+      },
       xl: '1280px',
       'full-hd': '1920px',
       '2k': '2048px',

@@ -42,6 +42,7 @@ module.exports = {
     enableInProd: process.env.DEPLOY_ENV === 'GH_PAGES',
     position: 'bottomRight',
     colorScheme: 'auto',
+    parseRaw: true,
   },
   tailwindcss: {
     configPath: './tailwind.config.js',
