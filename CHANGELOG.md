@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0](https://github.com/kswedberg/nuxt-breaky/compare/v1.2.10...v1.3.0) (2021-12-03)
+
+
+### Features
+
+* add experimental parseRaw option ([d6c48cf](https://github.com/kswedberg/nuxt-breaky/commit/d6c48cf308130b0500777f6816b8a2849f0f7546))
+
 ### [1.2.10](https://github.com/kswedberg/nuxt-breaky/compare/v1.2.9...v1.2.10) (2021-11-27)
 
 
