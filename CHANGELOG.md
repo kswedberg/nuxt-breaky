@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.3.1](https://github.com/kswedberg/nuxt-breaky/compare/v1.3.0...v1.3.1) (2021-12-03)
+
+
+### Bug Fixes
+
+* account for open paren when finding min-width ([ddcc868](https://github.com/kswedberg/nuxt-breaky/commit/ddcc86883c734247a2de2cb9994f7b0ae2127c96))
+
 ## [1.3.0](https://github.com/kswedberg/nuxt-breaky/compare/v1.2.10...v1.3.0) (2021-12-03)
 
 
