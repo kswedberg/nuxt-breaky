@@ -61,8 +61,10 @@ const getMinWidth = (breakpoint) => {
   }
   const minWidthQuery = breakpoint.raw.split(/\s*,\s*/).find((q) => {
     const i = q.indexOf('min-width')
-    return i === 0 || (i > 0 && q.includes('screen'))
+
+    return i === 0 || i === 1 || (i > 1 && q.includes('screen'))
   })
+
   return minWidthQuery && minWidthQuery.match(/min-width:\s*(\d+)px/)
 }
 
@@ -116,6 +118,7 @@ export default {
           match = val.match(/(\d+)px/)
         } else if (this.parseRaw) {
           match = getMinWidth(val)
+          console.log(match)
         }
         if (match) {
           obj[key] = parseInt(match[1])
