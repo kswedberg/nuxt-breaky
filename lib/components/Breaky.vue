@@ -118,7 +118,6 @@ export default {
           match = val.match(/(\d+)px/)
         } else if (this.parseRaw) {
           match = getMinWidth(val)
-          console.log(match)
         }
         if (match) {
           obj[key] = parseInt(match[1])
