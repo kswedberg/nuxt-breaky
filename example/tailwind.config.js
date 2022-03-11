@@ -19,6 +19,5 @@ module.exports = {
       '4k': '3840px',
     },
   },
-  variants: {},
   plugins: [],
 }
