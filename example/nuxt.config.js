@@ -33,10 +33,7 @@ module.exports = {
   render: {
     resourceHints: false,
   },
-  modules: [
-    { handler: require('@nuxtjs/tailwindcss') },
-    { handler: require('../') },
-  ],
+  buildModules: ['@nuxtjs/tailwindcss', { handler: require('../') }],
   breaky: {
     enabled: true,
     enableInProd: process.env.DEPLOY_ENV === 'GH_PAGES',
