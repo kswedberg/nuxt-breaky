@@ -15,7 +15,7 @@
 
 **Note**: This is a simple fork of the [nuxt-breaky](https://github.com/teamnovu/nuxt-breaky) module. It should look and act pretty much the same as the original. Minor changes include removing the `node-sass` dependency to make the module usable with node.js >= 16 and adding a landmark `aria-role` attribute to the div.current-breakpoint element.
 
-[DEMO](https://teamnovu.github.io/nuxt-breaky/)
+[DEMO](https://kswedberg.github.io/nuxt-breaky/)
 
 breaky helps you create your responsive designs faster. It extends the awesome [tailwindcss-module](https://github.com/nuxt-community/tailwindcss-module). breaky reads your defined breakpoints within your tailwind config and shows the currently active breakpoint based on your browser window width.
 
@@ -125,13 +125,13 @@ Copyright (c) teamnovu
 
 <!-- Badges -->
 
-[npm-version-src]: https://img.shields.io/npm/v/nuxt-breaky/latest.svg?style=flat-square
+[npm-version-src]: https://img.shields.io/npm/v/nuxt-tailwind-breakpoints/latest.svg?style=flat-square
 [npm-version-href]: https://www.npmjs.com/package/nuxt-tailwind-breakpoints
-[npm-downloads-src]: https://img.shields.io/npm/dt/nuxt-breaky.svg?style=flat-square
-[npm-downloads-href]: https://github.com/teamnovu/nuxt-breaky/releases
-[circle-ci-src]: https://img.shields.io/circleci/project/github/teamnovu/nuxt-breaky.svg?style=flat-square
-[circle-ci-href]: https://circleci.com/gh/teamnovu/nuxt-breaky
-[codecov-src]: https://img.shields.io/codecov/c/github/teamnovu/nuxt-breaky.svg?style=flat-square
-[codecov-href]: https://codecov.io/gh/teamnovu/nuxt-breaky
+[npm-downloads-src]: https://img.shields.io/npm/dt/nuxt-tailwind-breakpoints.svg?style=flat-square
+[npm-downloads-href]: https://github.com/kswedberg/nuxt-breaky/releases
+[circle-ci-src]: https://img.shields.io/circleci/project/github/kswedberg/nuxt-breaky.svg?style=flat-square
+[circle-ci-href]: https://circleci.com/gh/kswedberg/nuxt-breaky
+[codecov-src]: https://img.shields.io/codecov/c/github/kswedberg/nuxt-breaky.svg?style=flat-square
+[codecov-href]: https://codecov.io/gh/kswedberg/nuxt-breaky
 [license-src]: https://img.shields.io/npm/l/nuxt-breaky.svg?style=flat-square
-[license-href]: https://github.com/teamnovu/nuxt-breaky/blob/master/LICENSE
+[license-href]: https://github.com/kswedberg/nuxt-breaky/blob/master/LICENSE
