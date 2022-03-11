@@ -32,7 +32,7 @@
     "deploy:gh-pages": "git subtree push --prefix example/dist origin gh-pages"
   },
   "dependencies": {
-    "@nuxtjs/tailwindcss": "^4.2.0",
+    "@nuxtjs/tailwindcss": "^5.0.0",
     "interactjs": "^1.10.11",
     "lodash": "^4.17.21"
   },
@@ -41,17 +41,17 @@
     "@babel/preset-env": "^7.14.7",
     "@commitlint/cli": "^11.0.0",
     "@commitlint/config-conventional": "^11.0.0",
+    "@nuxt/test-utils": "^0.2.2",
     "@nuxtjs/eslint-config": "^3.1.0",
-    "@nuxtjs/module-test-utils": "^1.6.3",
+    "@types/jest": "^27.4.1",
     "babel-eslint": "latest",
-    "babel-jest": "^26.3.0",
     "codecov": "^3.7.2",
     "eslint": "^7.30.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.0",
     "husky": "^4.2.3",
-    "jest": "^26.4.2",
-    "nuxt": "^2.15.7",
+    "jest": "^27.5.1",
+    "nuxt": "^2.15.8",
     "prettier": "^1.19.1",
     "standard-version": "^9.0.0"
   },

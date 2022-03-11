@@ -1,18 +1,19 @@
-const { setup, loadConfig, get } = require('@nuxtjs/module-test-utils')
+import { join } from 'path'
+import { get, setupTest } from '@nuxt/test-utils'
 
 describe('module', () => {
-  let nuxt
+  const rootDir = join(__dirname, '..', 'example')
+  const configFile = join(__dirname, '..', 'example', 'tailwind.config.js')
 
-  beforeAll(async () => {
-    ;({ nuxt } = await setup(loadConfig(__dirname, '../../example')))
-  }, 60000)
-
-  afterAll(async () => {
-    await nuxt.close()
+  setupTest({
+    server: true,
+    rootDir,
+    configFile,
   })
 
   test('render', async () => {
-    const html = await get('/')
+    const html = await get('/').then((r) => r.body)
+
     expect(html).toContain('breaky')
   })
 })
