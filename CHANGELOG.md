@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.0.0](https://github.com/kswedberg/nuxt-breaky/compare/v1.3.2...v2.0.0) (2022-03-11)
+
+
+### ⚠ BREAKING CHANGES
+
+* Depends on @nuxtjs/tailwindcss@5, which depends on
+tailwindcss@3
+
+### Features
+
+* support @nuxtjs/tailwindcss@5 ([ebaabe7](https://github.com/kswedberg/nuxt-breaky/commit/ebaabe7ebd0f37f2368611294083a738963ec603))
+
+
+### Bug Fixes
+
+* remove unnecessary variants prop in tailwind config ([ba9752d](https://github.com/kswedberg/nuxt-breaky/commit/ba9752defa32e40cee59ea4d3d8532759aec9962))
+
 ### [1.3.2](https://github.com/kswedberg/nuxt-breaky/compare/v1.3.1...v1.3.2) (2022-01-10)
 
 ### [1.3.1](https://github.com/kswedberg/nuxt-breaky/compare/v1.3.0...v1.3.1) (2021-12-03)
