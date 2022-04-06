@@ -33,7 +33,18 @@ module.exports = {
   render: {
     resourceHints: false,
   },
-  buildModules: ['@nuxtjs/tailwindcss', { handler: require('../') }],
+  css: ['~/assets/css/tailwind.css'],
+  buildModules: ['@nuxt/postcss8', { handler: require('../') }],
+  build: {
+    transpile: ['tailwindcss'],
+    postcss: {
+      plugins: {
+        'tailwindcss/nesting': {},
+        tailwindcss: { config: 'example/tailwind.config.js' },
+        'postcss-nested': false,
+      },
+    },
+  },
   breaky: {
     enabled: true,
     enableInProd: process.env.DEPLOY_ENV === 'GH_PAGES',
@@ -41,11 +52,7 @@ module.exports = {
     colorScheme: 'auto',
     parseRaw: true,
   },
-  tailwindcss: {
-    configPath: './tailwind.config.js',
-    cssPath: './assets/css/tailwind.css',
-    exposeConfig: true,
-  },
+
   purgeCSS: {
     enabled: false,
   },

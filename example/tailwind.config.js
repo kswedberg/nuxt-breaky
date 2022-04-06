@@ -19,5 +19,6 @@ module.exports = {
       '4k': '3840px',
     },
   },
-  plugins: [],
+  // plugins: [],
+  content: ['**/*.vue'],
 }
