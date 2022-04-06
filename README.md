@@ -27,7 +27,7 @@ The plugin will only be loaded during development mode and does not interfere wi
 
 ## Requirements
 
-Make sure `tailwindcss-module: ^1.4.0` (or higher) is installed.
+Make sure `tailwindcss: ^5.0.0` and `@nuxt/postcss8: ^1.1.3` (or higher) are installed.
 
 ## Setup
 
@@ -56,24 +56,15 @@ NOTE: Use the `modules` section if you are using Nuxt older than `v2.9`. [More I
         enabled: true,
         enableInProd: false,
         colorScheme: 'auto',
-        position: 'bottomRight'
+        position: 'bottomRight',
+        configPath: '~~/tailwind.config.js',
       }
     ]
   ]
 }
 ```
 
-3. Add `exposeConfig: true` to the `tailwindcss` section of `nuxt.config.js`
-
-```js
-{
-  tailwindcss: {
-    exposeConfig: true
-  }
-}
-```
-
-NOTE: Please be aware this adds ~19.5KB (~3.5KB) to the client bundle size when you are in development mode. [More Info](https://github.com/nuxt-community/tailwindcss-module#referencing-in-javascript)
+1.
 
 ## Usage
 
@@ -98,13 +89,15 @@ You can pass options to the breaky using both the module options and the Nuxt co
 
 #### Available Options
 
-| Option         | Type      | Default         | Options                                                          | Description                                                                                                                                                                                                                                                          |
-| -------------- | --------- | --------------- | ---------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `enabled`      | `Boolean` | `true`          | `true` \| `false`                                                | Enable/Disable breaky                                                                                                                                                                                                                                                |
-| `enableInProd` | `Boolean` | `false`         | `true` \| `false`                                                | Enable breaky in production (overrides the enabled option; Please be aware this adds ~19.5KB (~3.5KB) to the client bundle size. [More Info](https://github.com/nuxt-community/tailwindcss-module#referencing-in-javascript))                                        |
-| `colorScheme`  | `String`  | `auto`          | `'auto'` \| `'light'` \| `'dark'`                                | Switch between different color schemes                                                                                                                                                                                                                               |
-| `position`     | `String`  | `'bottomRight'` | `'topLeft'` \| `'topRight'` \| `'bottomLeft'` \| `'bottomRight'` | Breakys starting position                                                                                                                                                                                                                                            |
-| `parseRaw`     | `Boolean` | `false`         | `true` \| `false`                                                | (_Expiremental_) Enable parsing a screen's `raw` property and use a query's `min-width` pixel value if it specifies the device type as `screen` or doesn't specify device type at all. For example, `lg: {raw: print, (min-width: 1024px)}` would set `lg` to `1024` |
+| Option         | Type      | Default                   | Options                                                          | Description                                                                                                                                                                                                                                                          |
+| -------------- | --------- | ------------------------- | ---------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `enabled`      | `Boolean` | `true`                    | `true` \| `false`                                                | Enable/Disable breaky                                                                                                                                                                                                                                                |
+| `enableInProd` | `Boolean` | `false`                   | `true` \| `false`                                                | Enable breaky in production (overrides the enabled option; Please be aware this adds ~19.5KB (~3.5KB) to the client bundle size. [More Info](https://github.com/nuxt-community/tailwindcss-module#referencing-in-javascript))                                        |
+| `colorScheme`  | `String`  | `auto`                    | `'auto'` \| `'light'` \| `'dark'`                                | Switch between different color schemes                                                                                                                                                                                                                               |
+| `position`     | `String`  | `'bottomRight'`           | `'topLeft'` \| `'topRight'` \| `'bottomLeft'` \| `'bottomRight'` | Breakys starting position                                                                                                                                                                                                                                            |
+| `parseRaw`     | `Boolean` | `false`                   | `true` \| `false`                                                | (_Experimental_) Enable parsing a screen's `raw` property and use a query's `min-width` pixel value if it specifies the device type as `screen` or doesn't specify device type at all. For example, `lg: {raw: print, (min-width: 1024px)}` would set `lg` to `1024` |
+| `configPath`   | `String`  | `'~~/tailwind.config.js'` | any valid path ponting to the file                               | Path to the tailwindcss config file                                                                                                                                                                                                                                  |
+| `breakpoints`  | `Object`  | `undefined`               |                                                                  | An object representing all the breakpoints you'd like to identify in your configuration. If provided, it is used _instead of_ `screens` from tailwind config                                                                                                         |
 
 ## Development
 
