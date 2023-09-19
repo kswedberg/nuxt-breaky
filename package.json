@@ -1,67 +1,62 @@
 {
   "name": "nuxt-tailwind-breakpoints",
   "version": "2.1.0",
-  "description": "Show Tailwind CSS Breakpoints in Nuxtjs",
-  "repository": "kswedberg/nuxt-breaky",
+  "description": "Show Tailwind CSS Breakpoints in Nuxt 3",
+  "repository": "kswedberg/nuxt-tailwind-breakpoints",
   "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/types.d.ts",
+      "import": "./dist/module.mjs",
+      "require": "./dist/module.cjs"
+    }
+  },
+  "main": "./dist/module.cjs",
+  "types": "./dist/types.d.ts",
+  "files": [
+    "dist"
+  ],
   "contributors": [
+    {
+      "name": "Karl Swedberg (@kswedberg)"
+    },
     {
       "name": "Natthakit Khamso (@motion-work)"
     },
     {
       "name": "Tom Diggelmann (@buffalom)"
-    },
-    {
-      "name": "Karl Swedberg (@kswedberg)"
     }
   ],
-  "files": [
-    "lib"
-  ],
-  "main": "lib/module.js",
   "scripts": {
-    "dev": "PORT=3311 nuxt example",
-    "lint": "eslint --ext .js,.vue example lib test",
-    "release": "yarn test && yarn update:gh-pages && standard-version && git push --follow-tags && npm publish",
-    "release:patch": "yarn test && yarn update:gh-pages && standard-version --release-as patch && git push --follow-tags && npm publish",
-    "release:minor": "yarn test && yarn update:gh-pages && standard-version --release-as minor && git push --follow-tags && npm publish",
-    "release:major": "yarn test && yarn update:gh-pages && standard-version --release-as major && git push --follow-tags && npm publish",
-    "test": "yarn lint && jest",
-    "update:gh-pages": "yarn generate:gh-pages && git add -A && git diff-index --quiet HEAD || git commit -m \"docs: update gh-pages\" && git push && yarn deploy:gh-pages",
-    "generate:gh-pages": "DEPLOY_ENV=GH_PAGES nuxt generate example",
-    "deploy:gh-pages": "git subtree push --prefix example/dist origin gh-pages"
+    "prepack": "nuxt-module-build",
+    "dev": "cd playground && nuxi dev",
+    "dev:build": "cd playground && nuxi build",
+    "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground",
+    "release": "npm run lint && npm run test && npm run prepack && changelogen --release && npm publish && git push --follow-tags",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "test:watch": "vitest watch"
   },
   "dependencies": {
-    "clear-module": "^4.1.2",
-    "interactjs": "^1.10.11",
-    "lodash": "^4.17.21",
-    "tailwindcss": "^3.0.23"
+    "@nuxt/kit": "^3.7.2",
+    "interactjs": "^1.10.18",
+    "tailwindcss": "^3.3.3"
   },
   "devDependencies": {
-    "@babel/core": "^7.17.9",
-    "@babel/preset-env": "^7.14.7",
-    "@commitlint/cli": "^11.0.0",
-    "@commitlint/config-conventional": "^11.0.0",
-    "@nuxt/postcss8": "^1.1.3",
-    "@nuxt/test-utils": "^0.2.2",
-    "@nuxtjs/eslint-config": "^3.1.0",
-    "@types/jest": "^27.4.1",
-    "autoprefixer": "^10.4.4",
-    "codecov": "^3.7.2",
-    "eslint": "^7.30.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-prettier": "^3.4.0",
-    "husky": "^4.2.3",
-    "jest": "^27.5.1",
-    "nuxt": "^2.15.8",
-    "postcss": "^8.4.12",
-    "prettier": "^1.19.1",
-    "standard-version": "^9.0.0"
-  },
-  "resolutions": {
-    "minimist": "^1.2.6"
-  },
-  "publishConfig": {
-    "access": "public"
+    "@nuxt/devtools": "latest",
+    "@nuxt/eslint-config": "^0.2.0",
+    "@nuxt/module-builder": "^0.5.1",
+    "@nuxt/schema": "^3.7.2",
+    "@nuxt/test-utils": "^3.7.3",
+    "@types/node": "^18.17.15",
+    "changelogen": "^0.5.5",
+    "eslint": "^8.49.0",
+    "eslint-config-kswedberg": "^5.4.0",
+    "eslint-plugin-import": "^2.28.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-vue": "^9.17.0",
+    "nuxt": "^3.7.3",
+    "vitest": "^0.33.0"
   }
 }
